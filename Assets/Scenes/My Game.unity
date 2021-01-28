@@ -750,7 +750,7 @@ MonoBehaviour:
     motor: 0
     steering: 0
   maxMotorTorque: 500
-  maxSteeringAngle: 30
+  maxSteeringAngle: 35
   rb: {fileID: 894614379}
   centreOfMass: {x: 0, y: -0.5, z: 0}
   brakeForce: 3.1
@@ -1130,7 +1130,7 @@ WheelCollider:
   m_Radius: 0.4
   m_SuspensionSpring:
     spring: 35000
-    damper: 4500
+    damper: 2000
     targetPosition: 0.5
   m_SuspensionDistance: 0.1
   m_ForceAppPointDistance: 0
@@ -1396,7 +1396,7 @@ WheelCollider:
   m_Radius: 0.4
   m_SuspensionSpring:
     spring: 35000
-    damper: 4500
+    damper: 2000
     targetPosition: 0.5
   m_SuspensionDistance: 0.1
   m_ForceAppPointDistance: 0
@@ -1805,7 +1805,7 @@ WheelCollider:
   m_Radius: 0.4
   m_SuspensionSpring:
     spring: 35000
-    damper: 4500
+    damper: 2000
     targetPosition: 0.5
   m_SuspensionDistance: 0.1
   m_ForceAppPointDistance: 0
@@ -1847,7 +1847,7 @@ WheelCollider:
   m_Radius: 0.4
   m_SuspensionSpring:
     spring: 35000
-    damper: 4500
+    damper: 2000
     targetPosition: 0.5
   m_SuspensionDistance: 0.1
   m_ForceAppPointDistance: 0
