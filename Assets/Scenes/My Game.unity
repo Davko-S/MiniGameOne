@@ -749,7 +749,7 @@ MonoBehaviour:
     rightWheel: {fileID: 1104467149}
     motor: 0
     steering: 0
-  maxMotorTorque: 400
+  maxMotorTorque: 500
   maxSteeringAngle: 30
   rb: {fileID: 894614379}
   centreOfMass: {x: 0, y: -0.5, z: 0}
