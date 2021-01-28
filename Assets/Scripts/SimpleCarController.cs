@@ -12,6 +12,7 @@ public class SimpleCarController : MonoBehaviour {
 
     void Start()
     {
+        // Revealing the centre of mass to be able to lower it for better control
         rb = GetComponent<Rigidbody>();
         centreOfMass = rb.centerOfMass;
     }
@@ -25,19 +26,22 @@ public class SimpleCarController : MonoBehaviour {
         }
      
         Transform visualWheel = collider.transform.GetChild(0);
-     
         Vector3 position;
         Quaternion rotation;
         collider.GetWorldPose(out position, out rotation);
-     
+        
+        // The visual aspect of wheels was rotated 180 using wheel collider tutorial - this line solves the problem: 
+        rotation = rotation * Quaternion.Euler(new Vector3(0, 180, 0)); 
         visualWheel.transform.position = position;
         visualWheel.transform.rotation = rotation;
-    }
-        
+    }        
+    
     public void FixedUpdate()
     {
+        // Using drag parameter to brake the player's truck
         rb.drag = Input.GetAxis("Left Bumper") * brakeForce;
         
+        // Accelerate with Right Bumper on XBox controller
         float motor = maxMotorTorque * Input.GetAxis("Right Bumper");
         if (rb.drag >= 3) {
             motor = maxMotorTorque * -Input.GetAxis("Left Bumper");
