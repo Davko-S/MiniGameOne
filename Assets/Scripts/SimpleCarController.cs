@@ -39,12 +39,14 @@ public class SimpleCarController : MonoBehaviour {
     public void FixedUpdate()
     {
         // Using drag parameter to brake the player's truck
-        rb.drag = Input.GetAxis("Left Bumper") * brakeForce;
+        //rb.drag = Input.GetAxis("Left Bumper") * brakeForce; // Controller
         
         // Accelerate with Right Bumper on XBox controller
-        float motor = maxMotorTorque * Input.GetAxis("Right Bumper");
+        // float motor = maxMotorTorque * Input.GetAxis("Right Bumper"); Controller
+        float motor = maxMotorTorque * Input.GetAxis("Vertical"); // Keyboard
+        
         if (rb.drag >= 3) {
-            motor = maxMotorTorque * -Input.GetAxis("Left Bumper");
+            motor = maxMotorTorque * -Input.GetAxis("Left Bumper"); // Controller
         }
         float steering = maxSteeringAngle * Input.GetAxis("Horizontal");
             
