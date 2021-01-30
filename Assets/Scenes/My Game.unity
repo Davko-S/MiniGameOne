@@ -749,8 +749,8 @@ MonoBehaviour:
     rightWheel: {fileID: 1104467149}
     motor: 0
     steering: 0
-  maxMotorTorque: 500
-  maxSteeringAngle: 35
+  maxMotorTorque: 550
+  maxSteeringAngle: 27
   rb: {fileID: 894614379}
   centreOfMass: {x: 0, y: -0.5, z: 0}
   brakeForce: 3.1
@@ -1129,7 +1129,7 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.4
   m_SuspensionSpring:
-    spring: 35000
+    spring: 100000
     damper: 2000
     targetPosition: 0.5
   m_SuspensionDistance: 0.1
@@ -1149,6 +1149,36 @@ WheelCollider:
     m_AsymptoteValue: 0.8
     m_Stiffness: 2
   m_Enabled: 1
+--- !u!1 &1160074064
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1160074065}
+  m_Layer: 0
+  m_Name: RoadManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1160074065
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1160074064}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1172508663 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7443025954936296713, guid: 61e409d37cc441f4fac1389910c7b8ff,
@@ -1395,7 +1425,7 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.4
   m_SuspensionSpring:
-    spring: 35000
+    spring: 100000
     damper: 2000
     targetPosition: 0.5
   m_SuspensionDistance: 0.1
@@ -1804,7 +1834,7 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.4
   m_SuspensionSpring:
-    spring: 35000
+    spring: 100000
     damper: 2000
     targetPosition: 0.5
   m_SuspensionDistance: 0.1
@@ -1846,7 +1876,7 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.4
   m_SuspensionSpring:
-    spring: 35000
+    spring: 100000
     damper: 2000
     targetPosition: 0.5
   m_SuspensionDistance: 0.1
