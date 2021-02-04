@@ -17,7 +17,8 @@ public class UpdatedCarController : MonoBehaviour
 
     public float maxSteerAngle = 30;
     public float motorForce = 200;
-    public float brakeForce = 200;
+    public float maxSpeed = 100;
+    private float brakeForce = 0;
     public float gravityModifier = 1;
 
     public void GetInput()
@@ -38,31 +39,42 @@ public class UpdatedCarController : MonoBehaviour
     private void Accelerate()
     {
         
-        if (verticalInput < 0)
+        if (frontDriverW.motorTorque >= maxSpeed || frontDriverW.motorTorque <= -maxSpeed)
         {
-            frontDriverW.motorTorque = verticalInput * brakeForce;
-            frontPassengerW.motorTorque = verticalInput * brakeForce;
-        } else
+            frontDriverW.motorTorque = verticalInput * maxSpeed;
+            frontPassengerW.motorTorque = verticalInput * maxSpeed;
+        }
+        else
         {
             frontDriverW.motorTorque = verticalInput * motorForce;
             frontPassengerW.motorTorque = verticalInput * motorForce;
         }
-
-        
+    
+        // Optional setup for Xbox Controller input
         //frontDriverW.motorTorque = forwardInputXbox * motorForce;
         //frontPassengerW.motorTorque = forwardInputXbox * motorForce;
     }
 
     private void Brake()
     {
-        frontDriverW.brakeTorque = backInputXbox * brakeForce;
-        frontPassengerW.brakeTorque = backInputXbox * brakeForce;
-        frontDriverW.brakeTorque = backInputXbox * brakeForce;
-        frontPassengerW.brakeTorque = backInputXbox * brakeForce;
+        if (Input.GetKey(KeyCode.Space) == true)
+        {
+            brakeForce = 1f;
+            frontDriverW.brakeTorque = brakeForce;
+            frontPassengerW.brakeTorque = brakeForce;
+            rearDriverW.brakeTorque = brakeForce;
+            rearPassengerW.brakeTorque = brakeForce;
+        } else
+        {
+            brakeForce = 0;
+            frontDriverW.brakeTorque = brakeForce;
+            frontPassengerW.brakeTorque = brakeForce;
+            rearDriverW.brakeTorque = brakeForce;
+            rearPassengerW.brakeTorque = brakeForce;
+        }
     }
 
-
-    private void UpdateWheelPoses()
+        private void UpdateWheelPoses()
     {
         UpdateWheelPose(frontDriverW, frontDriverT);
         UpdateWheelPose(frontPassengerW, frontPassengerT);
