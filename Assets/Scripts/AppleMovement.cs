@@ -5,8 +5,8 @@ using UnityEngine;
 public class AppleMovement : MonoBehaviour
 {
     private Vector3 startPos;
-    private float leftBound = -5;
-    private float rightBound = 5;
+    private float leftBound = -8;
+    private float rightBound = 8;
     public float lifetime = 3;
 
     // Start is called before the first frame update
