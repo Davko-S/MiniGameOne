@@ -9,7 +9,8 @@ public class RoadManager : MonoBehaviour
 
     private float roadLength = 58.0f;
     private float spawnZ = 0.0f;
-    private int amOfPrefabs = 3;
+    private int amOfPrefabs = 2;
+    private int startingChildObjects;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +20,8 @@ public class RoadManager : MonoBehaviour
         {
             SpawnRoad();
         }
+
+        startingChildObjects = transform.childCount;
     }
 
     // Update is called once per frame
@@ -28,11 +31,16 @@ public class RoadManager : MonoBehaviour
         {
             SpawnRoad();
         }
+        int updatedChildObjects = transform.childCount;
+        if (updatedChildObjects - startingChildObjects > 2)
+        {
+            Destroy(GetComponent<Transform>().GetChild(0).gameObject);
+        }
     }
     // Spawns one road prefab and puts the clone inside RoadManager hierarchy object
     void SpawnRoad()
     {
-        int prefabIndex = Random.Range(0, 2);
+        int prefabIndex = Random.Range(0, roadPrefabs.Length);
         GameObject go;
         go = Instantiate(roadPrefabs[prefabIndex]) as GameObject;
         go.transform.SetParent(transform);
