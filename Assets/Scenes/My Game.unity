@@ -311,7 +311,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e067031318dfbb448d2897697115db4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifetime: 5
+  lifetime: 30
 --- !u!1 &376805525
 GameObject:
   m_ObjectHideFlags: 0
@@ -521,7 +521,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e067031318dfbb448d2897697115db4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifetime: 5
+  lifetime: 30
 --- !u!135 &470034809
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -769,7 +769,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e067031318dfbb448d2897697115db4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifetime: 5
+  lifetime: 30
 --- !u!135 &608071522
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -823,7 +823,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e067031318dfbb448d2897697115db4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifetime: 5
+  lifetime: 30
 --- !u!135 &612166081
 SphereCollider:
   m_ObjectHideFlags: 0
