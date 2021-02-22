@@ -107,5 +107,4 @@ public class UpdatedCarController : MonoBehaviour
     {
         Physics.gravity *= gravityModifier;
     }
-
 }

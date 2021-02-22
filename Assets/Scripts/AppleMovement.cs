@@ -30,4 +30,12 @@ public class AppleMovement : MonoBehaviour
             transform.position = new Vector3(leftBound, transform.position.y, transform.position.z);
         }
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+        }
+    }
 }
