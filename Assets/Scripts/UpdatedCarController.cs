@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class UpdatedCarController : MonoBehaviour
 {
+    public int appleCount = 0;
+    
     private float horizontalInput;
     private float forwardInputXbox;
     private float backInputXbox;
@@ -106,5 +108,13 @@ public class UpdatedCarController : MonoBehaviour
     private void Start()
     {
         Physics.gravity *= gravityModifier;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("RedApple")) 
+        {
+            appleCount++;
+        }
     }
 }

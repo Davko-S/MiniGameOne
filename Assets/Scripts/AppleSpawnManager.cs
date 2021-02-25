@@ -10,7 +10,6 @@ public class AppleSpawnManager : MonoBehaviour
     private const float spawnPosY = 2.0f;
     private float playerStartPosZ;
     private float playerCurrentPosZ;
-    private int appleCount;
 
     private GameObject player;
 
@@ -31,11 +30,6 @@ public class AppleSpawnManager : MonoBehaviour
         if (playerCurrentPosZ - playerStartPosZ > 12)
         {
             SpawnApple();
-            appleCount = FindObjectsOfType<AppleMovement>().Length;
-            if (appleCount == 0)
-            {
-                SpawnApple();
-            }
         }
     }
 
