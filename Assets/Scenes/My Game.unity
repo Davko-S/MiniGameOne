@@ -624,6 +624,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 596947836c0d92744a58bf8f831748f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  appleCount: 0
   frontDriverW: {fileID: 1710805236}
   frontPassengerW: {fileID: 1331991974}
   rearDriverW: {fileID: 1829656164}
@@ -1411,6 +1412,9 @@ MonoBehaviour:
   applePrefabs:
   - {fileID: 1821688749331919121, guid: 4341dccc542d8b14181ec3f0f5edc8e6, type: 3}
   - {fileID: 1821688749331919121, guid: 4341dccc542d8b14181ec3f0f5edc8e6, type: 3}
+  enemyTruckPrefabs:
+  - {fileID: 2313493594774984422, guid: 9174106784290254dbef35cd6ff64b94, type: 3}
+  - {fileID: 2313493594774984422, guid: 9174106784290254dbef35cd6ff64b94, type: 3}
 --- !u!4 &4892003108203793 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1824577495877699585, guid: 4341dccc542d8b14181ec3f0f5edc8e6,
@@ -1552,6 +1556,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: EnemyTruck
+      objectReference: {fileID: 0}
+    - target: {fileID: 2313493594774984422, guid: 9174106784290254dbef35cd6ff64b94,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9174106784290254dbef35cd6ff64b94, type: 3}

@@ -5,6 +5,7 @@ using UnityEngine;
 public class AppleSpawnManager : MonoBehaviour
 {
     public GameObject[] applePrefabs;
+    public GameObject[] enemyTruckPrefabs;
     
     private float spawnRangeX = 5.0f;
     private const float spawnPosY = 2.0f;
@@ -30,6 +31,10 @@ public class AppleSpawnManager : MonoBehaviour
         if (playerCurrentPosZ - playerStartPosZ > 12)
         {
             SpawnApple();
+            if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
+            {
+                SpawnEnemy();
+            }
         }
     }
 
@@ -40,5 +45,15 @@ public class AppleSpawnManager : MonoBehaviour
         Vector3 spawnPos = new Vector3(Random.Range(-spawnRangeX, spawnRangeX), spawnPosY , playerCurrentPosZ + spawnDistanceZ);
         Instantiate(applePrefabs[appleIndex], spawnPos, applePrefabs[appleIndex].transform.rotation);
         playerStartPosZ = player.transform.position.z;
+    }
+
+    void SpawnEnemy()    //Randomly generate enemy truck's index and spawn position
+    {
+        int enemyIndex = Random.Range(0, enemyTruckPrefabs.Length);
+        float spawnDistanceZ = Random.Range(28, 33);
+        float spawnLimitX = 2.0f;
+        float spawnLimitY = 0.1f;
+        Vector3 spawnPos = new Vector3(Random.Range(-spawnLimitX, spawnLimitX), spawnLimitY, playerCurrentPosZ + spawnDistanceZ);
+        Instantiate(enemyTruckPrefabs[enemyIndex], spawnPos, enemyTruckPrefabs[enemyIndex].transform.rotation);
     }
 }
