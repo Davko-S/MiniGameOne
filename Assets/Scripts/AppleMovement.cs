@@ -5,13 +5,17 @@ using UnityEngine;
 public class AppleMovement : MonoBehaviour
 {
     private Vector3 startPos;
+    private float rotationSpeed = 10;
     private float leftBound = -8;
     private float rightBound = 8;
     public float lifetime = 3;
 
+    private Rigidbody appleRb;
+
     // Start is called before the first frame update
     void Start()
     {
+        appleRb = GetComponent<Rigidbody>();
         startPos = transform.position;
         Destroy(gameObject, lifetime);
     }
@@ -29,6 +33,11 @@ public class AppleMovement : MonoBehaviour
         {
             transform.position = new Vector3(leftBound, transform.position.y, transform.position.z);
         }
+
+        //transform.Rotate(new Vector3(0, 30, 0) * rotationSpeed * Time.deltaTime);
+        float xRange = Random.Range(-3.0f, 3.0f);
+        float yRange = Random.Range(0, 0.5f);
+        appleRb.AddForce(new Vector3(xRange, yRange, 0) * 5, ForceMode.Acceleration);
     }
 
     private void OnCollisionEnter(Collision collision)
