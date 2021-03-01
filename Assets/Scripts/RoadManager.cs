@@ -32,6 +32,8 @@ public class RoadManager : MonoBehaviour
         if (playerTransform.position.z > (spawnZ - amOfPrefabs * roadLength))
         {
             SpawnRoad();
+            GameObject firstRoad = GameObject.Find("Road");
+            Destroy(firstRoad);
         }
         // Destroy first road prefab (FIFO) if there are more than 4 in total  
         int updatedChildObjects = transform.childCount;
