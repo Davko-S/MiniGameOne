@@ -7,7 +7,7 @@ public class AppleSpawnManager : MonoBehaviour
     public GameObject[] applePrefabs;
     public GameObject[] enemyTruckPrefabs;
     
-    private float spawnRangeX = 5.0f;
+    private float spawnRangeX = 7.0f;
     private const float spawnPosY = 2.0f;
     private float playerStartPosZ;
     private float playerCurrentPosZ;
